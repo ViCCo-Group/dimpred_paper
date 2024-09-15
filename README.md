@@ -11,10 +11,7 @@ Most directories and subdirectories have their own `README.md` explaining their 
 ```
 ├── README.md
 ├── data                <-  .gitignored due to size.
-│   ├── images          <- All image sets used in this project.
-│   ├── interim         <- Intermediate data based on raw data that has been transformed using scripts.
-│   ├── processed       <- The final data forming the basis for results.
-│   └── raw             <- Original and immutable data serving as input to scripts.
+│   └── processed       <- The final data forming the basis for results.
 │
 ├── results             <- Output from scripts that go into the manuscript. .gitignored due to size.
 │
