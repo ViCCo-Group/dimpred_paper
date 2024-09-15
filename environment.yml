@@ -1,0 +1,23 @@
+name: dimpred
+channels:
+  - defaults
+  - conda-forge
+dependencies:
+  - flake8
+  - joblib
+  - matplotlib
+  - numba
+  - numpy
+  - pandas
+  - psutil
+  - python=3.10.*
+  - scikit-learn
+  - scipy
+  - seaborn
+  - scikit-image
+  - ipykernel
+  - pip
+  - pip:
+    - hdf5storage
+    - fracridge
+    - opencv-python
