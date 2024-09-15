@@ -1,6 +1,6 @@
 # dimpred_paper
 
-This repository holds all analyses code to reproduce results of the _paper_ accompanying `DimPred`. The toolbox `dimpred` itself resides in a [separate repository](https://github.com/PhilippKaniuth/dimpred) (which is installed into this project as an editable source package (via `pip install -e .`)).
+This repository holds all analyses code to reproduce results of the _paper_ accompanying `DimPred`. The toolbox `dimpred` itself resides in a [separate repository](https://github.com/ViCCo-Group/dimpred) (which is installed into this project as an editable source package (via `pip install -e .`)).
 
 Most directories and subdirectories have their own `README.md` explaining their content further.
 
