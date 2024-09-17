@@ -2,9 +2,7 @@
 
 This repository holds all analyses code to reproduce results of the manuscript. The toolbox `DimPred` itself resides in a [separate repository](https://github.com/ViCCo-Group/dimpred).
 
-Most directories and subdirectories have their own `README.md` explaining their content further.
-
-`data` and `results` can be found on [OSF](https://osf.io/jtekq/).
+`data` and `results` should be downloaded on [OSF](https://osf.io/jtekq/).
 
 ## The directory structure
 
