@@ -21,18 +21,19 @@ This repository holds all analyses code to reproduce results of the manuscript. 
 ```
 
 ## Which figure in the manuscript was produced by which script?
-- Figure 1: handmade using Inkscape.
-- Figure 2: handmade using Inkscape.
-- Figure 3: `compute_dnn_results.py`, cell III.
-- Figure 4: `compute_dnn_results.py`, cell V.
-- Figure 5: `compute_human_results`, cell IV, (see also `compute_dnn_ensemble_model_results.py`, cell II).
-- Figure 6: `compute_dnn_results.py`, cell V.
-- Figure 7: `visualize_heatmaps.py`
-- Figure 8: Made by [O. Contier](https://github.com/oliver-contier).
-
-- Figure S1: `compute_dnn_results.py`, cell I.
-- Table S2: `compute_dnn_ensemble_model_results.py`, cell II.
-- Figure S3: `compute_human_results.py`, cell I.
+| Content  | Script |
+| ------------- | ------------- |
+| Figure 1  |  handmade using Inkscape  |
+| Figure 2  | handmade using Inkscape |
+| Figure 3 | `compute_dnn_results.py`, cell III |
+| Figure 4 | `compute_dnn_results.py`, cell V |
+| Figure 5 | `compute_human_results`, cell IV, (see also `compute_dnn_ensemble_model_results.py`, cell II) |
+| Figure 6 | `compute_dnn_results.py`, cell V |
+| Figure 7 | `visualize_heatmaps.py` |
+| Figure 8 | Made by [O. Contier](https://github.com/oliver-contier) |
+| Figure S1 | `compute_dnn_results.py`, cell I|
+| Table S2  | `compute_dnn_ensemble_model_results.py`, cell II|
+| Figure S3 | `compute_human_results.py`, cell I|
 
 For redundancy, each script has comments in each relevant cell explicating which figure (and which stats where in the paper) it produces.
 
