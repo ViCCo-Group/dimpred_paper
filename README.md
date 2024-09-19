@@ -80,6 +80,8 @@ This level is likely the one you want to enter on. If you start here, you do not
 
 6. run `visualize_heatmaps.py` to reproduce reported figures.
 
+Be aware of the [caveat note](https://github.com/ViCCo-Group/dimpred_paper/blob/main/scripts/CAVEAT.md).
+
 ## :page_with_curl: Citation
 If you use any of this code or the manuscript, please cite our [associated manuscript](https://www.biorxiv.org/content/10.1101/2024.06.28.601184v2) as follows:
 
