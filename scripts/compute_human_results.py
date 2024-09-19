@@ -13,7 +13,6 @@ from utils.utils import (
     correlate_matrices,
     determine_base_path,
     load_pickle,
-    noise_ceiling_group,
     rgb2hex,
 )
 
@@ -65,14 +64,6 @@ for imgset in imagesets:
         )
 
 true_embedding = np.loadtxt(f"{data_path}/raw/original_spose/embedding_49d.txt")
-
-noise_ceiling = {}
-for imgset in ["kriegeskorte-92", "kriegeskorte-118"]:
-    single_rms = np.load(
-        f"{data_path}/raw/ground_truth_representational_matrices/dissimilarity_{imgset}_single.npy"
-    )
-    noise_ceiling[imgset] = noise_ceiling_group(single_rms)
-
 dimpred_results = load_pickle(f"{data_path}/processed/dimpred_all_processed.pkl")
 dimrating_embeddings, dimrating_rsms = load_pickle(
     f"{data_path}/processed/dimrating_all_processed.pkl"
