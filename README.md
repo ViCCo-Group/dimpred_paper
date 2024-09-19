@@ -1,6 +1,6 @@
 # dimpred_paper
 
-This repository holds all analyses code to reproduce results of the manuscript. The toolbox `DimPred` itself resides in a [separate repository](https://github.com/ViCCo-Group/dimpred).
+This repository holds all analysis code to reproduce results of the manuscript. The toolbox `DimPred` itself resides in a [separate repository](https://github.com/ViCCo-Group/dimpred).
 
 `data` and `results` should be downloaded on [OSF](https://osf.io/jtekq/).
 
@@ -17,7 +17,7 @@ This repository holds all analyses code to reproduce results of the manuscript. 
 │
 ├── .gitignore
 ├── LICENSE.md
-├── environment.yml
+└── environment.yml
 ```
 
 ## Which figure in the manuscript was produced by which script?
@@ -37,11 +37,40 @@ This repository holds all analyses code to reproduce results of the manuscript. 
 
 For redundancy, each script has comments in each relevant cell explicating which figure (and which stats where in the paper) it produces.
 
-## How to reproduce
-1. Clone this repository to your local machine (e.g., via `git clone https://github.com/ViCCo-Group/dimpred_paper`)
-2. Download `data` and `results` from [OSF](https://osf.io/jtekq/), unpack them and put them inside your local version of this directory as indicated by [the directory structure](#the-directory-structure). You need to download _all_ files from OSF to be able to reproduce the findings.
-3. Create an environment using this repository's [environment.yml](https://github.com/ViCCo-Group/dimpred_paper/blob/main/environment.yml). For example, if you have `conda` on your system, execute `conda env create --file=/PATH/TO/environment.yml`. Replace `/PATH/TO/environment.yml` with the actual path to the environment file.
-4. Activate the environment and execute those scripts you are interested in.
+## How to reproduce the paper's finding
+### Preparation
+0. Read this section completely first.
+1. Clone this repository to your local machine (e.g., via `git clone https://github.com/ViCCo-Group/dimpred_paper`).
+2. Download all the files from [OSF](https://osf.io/jtekq/), unpack them and put them inside your local version of this directory as indicated by [the directory structure](#the-directory-structure).
+3. Read on.
+
+### Caveats
+- Since we are not allowed to share the ground-truth representational matrices for {Cichy-118, Peterson-Automobiles, Peterson-Fruits, Peterson-Furniture,  Peterson-Vegetables, Peterson-Various}, the respective files in `data-raw-ground_truth_representational_matrices` contains dummy data. This is to not brake the scripts when you execute them, but this makes all the results you reproduce for these image sets nonsensical. We are also not allowed to share the respective image sets.
+- For each computational model used in this project, the directory `data-raw-dnns` holds activations extracted for each image set using the Python package `thingsvision`. Note that that directory from the download on OSF is actually empty: the files together would be very large and can deterministically be recreated by running `thingsvision` with all the parameters mentioned in the manuscript's supplementary information if you want to.
+- You can choose to reproduce the manuscript's findings on different levels, where the first one is the most elaborate and the last one the quickest.
+
+#### Level I
+On this level, you will re-extract all activations from all computational models used in this study and run `dimpred` and `frrsa` to reproduce all basic output files. Specifically:
+
+0. Install [`thingsvision`](https://github.com/ViCCo-Group/thingsvision). Using all the parameters mentioned in the manuscript's supplementary information, extract activations for each computational model and public image set and save those activations into `data-raw-dnns`. You should create a separate conda environment for `thingsvision`.
+
+1. Run [`dimpred`](https://github.com/PhilippKaniuth/dimpred) and [`frrsa`](https://github.com/ViCCo-Group/frrsa/tree/master) for all computational models and put the output into `data-interim-dimpred/frrsa`. You should create separate conda environments for each.
+
+#### Level II.
+On this level, you assume `data-interim-dimpred` and `data-interim-frrsa` to be fine, but you will reproduce the {}_all_processed.pkl files in `data-processed`.
+
+2. Run the script `transform_to_processed.py` which outputs {}_all_processed.pkl files. Note that these already exist in `data-processed` because they are needed on Level III (but will be overwritten if you execute this step). Without executing step 0, you can execute this step for everything except `method == "crsa"` since that method acts directly on the raw model activations (see the docstrings in `transform_to_processed.py`).
+
+#### Level III.
+This level is likely the one you want to enter on. If you start here, you do not need to execute anything from prior steps and you can reproduce everything reported in the manuscript because you are not influenced by the missing image sets and respective ground-truth-representational-matrices. On this level, you will need to create an environment using this repository's [environment.yml](https://github.com/ViCCo-Group/dimpred_paper/blob/main/environment.yml).
+
+3. Run `compute_dnn_results.py` to reproduce reported statistics and figures (and to reproduce all_rsm_corrs_wide.pkl which already lives in `data-processed` and is used in step 5. but will be overwritten if you execute this step).
+
+4. Run `compute_dnn_ensemble_model_results.py` to reproduce reported statistics and figures (and to reproduce ensemble_model_rsms.pkl which lives in `data-processed` and is used in step 5. but will be overwritten if you execute this step).
+
+5. run `compute_human_results.py` to reproduce reported statistics and figures.
+
+6. run `visualize_heatmaps.py` to reproduce reported figures.
 
 ## :page_with_curl: Citation
 If you use any of this code or the manuscript, please cite our [associated manuscript](https://www.biorxiv.org/content/10.1101/2024.06.28.601184v2) as follows:
