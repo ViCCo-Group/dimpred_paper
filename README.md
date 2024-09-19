@@ -1,4 +1,4 @@
-# DimPred - Similarites via Embeddings
+# :star2: DimPred - Similarites via Embeddings
 
 This is the code repository of the project `A high-throughput approach for the efficient prediction of perceived similarity of natural objects`.
 
@@ -9,7 +9,7 @@ It holds all analysis code needed to reproduce results presented in the [manuscr
 The toolbox `DimPred` itself resides in a [separate repository](https://github.com/ViCCo-Group/dimpred).
 
 
-## The directory structure
+## :open_file_folder: The directory structure
 
 ```
 ├── README.md
@@ -28,7 +28,7 @@ The toolbox `DimPred` itself resides in a [separate repository](https://github.c
 └── environment.yml
 ```
 
-## Which figure in the manuscript was produced by which script?
+## :bar_chart: Which figure in the manuscript was produced by which script?
 | Content  | Script |
 | ------------- | ------------- |
 | Figure 1  |  handmade using Inkscape  |
@@ -45,7 +45,7 @@ The toolbox `DimPred` itself resides in a [separate repository](https://github.c
 
 For redundancy, each script has comments in each relevant cell explicating which figure (and which stats where in the paper) it produces.
 
-## How to reproduce the paper's finding
+## :mag: How to reproduce the paper's finding
 ### Preparation
 0. Read this section completely first.
 1. Clone this repository to your local machine (e.g., via `git clone https://github.com/ViCCo-Group/dimpred_paper`).
@@ -81,6 +81,16 @@ This level is likely the one you want to enter on. If you start here, you do not
 6. run `visualize_heatmaps.py` to reproduce reported figures.
 
 Be aware of the [caveat note](https://github.com/ViCCo-Group/dimpred_paper/blob/main/scripts/CAVEAT.md).
+
+<!-- Contact -->
+## :wave: How to contact
+In case of any questions or suggestions please reach out to either Philipp Kaniuth (kaniuth {at} cbs.mpg.de) or Martin Hebart (hebart {at} cbs.mpg.de).
+
+
+<!-- License -->
+## :warning: License
+This GitHub repository is licensed under the GNU AFFERO GENERAL PUBLIC LICENSE Version 3 - see the [LICENSE.md](LICENSE.md) file for details.
+
 
 ## :page_with_curl: Citation
 If you use any of this code or the manuscript, please cite our [associated manuscript](https://www.biorxiv.org/content/10.1101/2024.06.28.601184v2) as follows:
