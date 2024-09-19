@@ -24,7 +24,7 @@ The toolbox `DimPred` itself resides in a [separate repository](https://github.c
 ├── scripts             <- Interactive scripts used in this project that perform a specific end-level job.
 │
 ├── .gitignore
-├── LICENSE.md
+├── LICENSE
 └── environment.yml
 ```
 
