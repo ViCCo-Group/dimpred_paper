@@ -14,7 +14,6 @@ from helper import (
 from utils.utils import (
     determine_base_path,
     load_pickle,
-    noise_ceiling_group,
     rgb2hex,
     save_pickle,
 )
@@ -77,14 +76,6 @@ for imgset in imagesets:
         )
 
 true_embedding = np.loadtxt(f"{data_path}/raw/original_spose/embedding_49d.txt")
-
-noise_ceiling = {}
-for imgset in ["kriegeskorte-92", "kriegeskorte-118"]:
-    single_rms = np.load(
-        f"{data_path}/raw/ground_truth_representational_matrices/dissimilarity_{imgset}_single.npy"
-    )
-    noise_ceiling[imgset] = noise_ceiling_group(single_rms)
-
 crsa_results = load_pickle(f"{data_path}/processed/crsa_all_processed.pkl")
 frrsa_rsm_corrs = load_pickle(f"{data_path}/processed/frrsa_all_processed.pkl")
 dimpred_results = load_pickle(f"{data_path}/processed/dimpred_all_processed.pkl")
