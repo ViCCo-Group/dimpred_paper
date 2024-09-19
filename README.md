@@ -1,4 +1,4 @@
-# :star2: DimPred - Similarites via Embeddings
+# :star2: DimPred - Similarities via Embeddings
 
 This is the code repository of the project `A high-throughput approach for the efficient prediction of perceived similarity of natural objects`.
 
@@ -70,7 +70,7 @@ On this level, you assume `data-interim-dimpred` and `data-interim-frrsa` to be 
 2. Run the script `transform_to_processed.py` which outputs the {}_all_processed.pkl files. Note that these already exist in `data-processed` because they are needed on Level III (but will be overwritten if you execute this step). Without executing step 0, you can execute this step for everything except `method == "crsa"` since that method acts directly on the raw model activations (see the docstrings in `transform_to_processed.py`).
 
 #### Level III.
-This level is likely the one you want to enter on. If you start here, you do not need to execute anything from prior steps and you can reproduce everything reported in the manuscript because you are not influenced by the missing image sets and respective missing ground-truth-representational-matrices. On this level, you will need to create an environment using this repository's [environment.yml](https://github.com/ViCCo-Group/dimpred_paper/blob/main/environment.yml).
+This level is likely the one you want to enter on. If you start here, you do not need to execute anything from prior steps. On this level, you will need to create an environment using this repository's [environment.yml](https://github.com/ViCCo-Group/dimpred_paper/blob/main/environment.yml).
 
 3. Run `compute_dnn_results.py` to reproduce reported statistics and figures (and to reproduce all_rsm_corrs_wide.pkl which already lives in `data-processed` and is used in step 5. but will be overwritten if you execute this step).
 
