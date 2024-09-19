@@ -1,15 +1,23 @@
-# dimpred_paper
+# DimPred - Similarites via Embeddings
 
-This repository holds all analysis code to reproduce results of the manuscript. The toolbox `DimPred` itself resides in a [separate repository](https://github.com/ViCCo-Group/dimpred).
+This is the code repository of the project `A high-throughput approach for the efficient prediction of perceived similarity of natural objects`.
 
-`data` and `results` should be downloaded on [OSF](https://osf.io/jtekq/).
+
+It holds all analysis code needed to reproduce results presented in the [manuscript](https://www.biorxiv.org/content/10.1101/2024.06.28.601184v2). For all data needed to reproduce the manuscript's results please see the project's data repository on [OSF](https://osf.io/jtekq/).
+
+
+The toolbox `DimPred` itself resides in a [separate repository](https://github.com/ViCCo-Group/dimpred).
+
 
 ## The directory structure
 
 ```
 ├── README.md
 ├── data                <- .gitignored. Download from OSF.
-│   └── processed       <- The final data forming the basis for results.
+│   ├── images          <- All image sets used in this project.
+│   ├── interim         <- Intermediate data based on raw data that has been transformed using scripts.
+│   ├── processed       <- The final data forming the basis for results.
+│   └── raw             <- Original and immutable data serving as input to scripts.
 │
 ├── results             <- Output from scripts that go into the manuscript. .gitignored. Download from OSF.
 │
@@ -45,8 +53,8 @@ For redundancy, each script has comments in each relevant cell explicating which
 3. Read on.
 
 ### Caveats
-- Since we are not allowed to share the ground-truth representational matrices for {Cichy-118, Peterson-Automobiles, Peterson-Fruits, Peterson-Furniture,  Peterson-Vegetables, Peterson-Various}, the respective files in `data-raw-ground_truth_representational_matrices` contains dummy data. This is to not brake the scripts when you execute them, but this makes all the results you reproduce for these image sets nonsensical. We are also not allowed to share the respective image sets.
-- For each computational model used in this project, the directory `data-raw-dnns` holds activations extracted for each image set using the Python package `thingsvision`. Note that that directory from the download on OSF is actually empty: the files together would be very large and can deterministically be recreated by running `thingsvision` with all the parameters mentioned in the manuscript's supplementary information if you want to.
+- Since we are not allowed to share the ground-truth representational matrices for {Cichy-118, Peterson-Automobiles, Peterson-Fruits, Peterson-Furniture,  Peterson-Vegetables, Peterson-Various}, the respective files in `data-raw-ground_truth_representational_matrices` contain dummy data. This is to not brake the scripts when you execute them, but this of course makes all the results you reproduce for these image sets different from the actual results. We are also not allowed to share the respective image sets.
+- For each computational model used in this project, the directory `data-raw-dnns` holds activations extracted for each image set using the Python package `thingsvision`. Note that the respective directory you received when having downloaded everything from the data repository on OSF is actually empty: the files together would be very large and can deterministically be recreated by running `thingsvision` with all the parameters mentioned in the manuscript's supplementary information if you want to.
 - You can choose to reproduce the manuscript's findings on different levels, where the first one is the most elaborate and the last one the quickest.
 
 #### Level I
@@ -59,10 +67,10 @@ On this level, you will re-extract all activations from all computational models
 #### Level II.
 On this level, you assume `data-interim-dimpred` and `data-interim-frrsa` to be fine, but you will reproduce the {}_all_processed.pkl files in `data-processed`.
 
-2. Run the script `transform_to_processed.py` which outputs {}_all_processed.pkl files. Note that these already exist in `data-processed` because they are needed on Level III (but will be overwritten if you execute this step). Without executing step 0, you can execute this step for everything except `method == "crsa"` since that method acts directly on the raw model activations (see the docstrings in `transform_to_processed.py`).
+2. Run the script `transform_to_processed.py` which outputs the {}_all_processed.pkl files. Note that these already exist in `data-processed` because they are needed on Level III (but will be overwritten if you execute this step). Without executing step 0, you can execute this step for everything except `method == "crsa"` since that method acts directly on the raw model activations (see the docstrings in `transform_to_processed.py`).
 
 #### Level III.
-This level is likely the one you want to enter on. If you start here, you do not need to execute anything from prior steps and you can reproduce everything reported in the manuscript because you are not influenced by the missing image sets and respective ground-truth-representational-matrices. On this level, you will need to create an environment using this repository's [environment.yml](https://github.com/ViCCo-Group/dimpred_paper/blob/main/environment.yml).
+This level is likely the one you want to enter on. If you start here, you do not need to execute anything from prior steps and you can reproduce everything reported in the manuscript because you are not influenced by the missing image sets and respective missing ground-truth-representational-matrices. On this level, you will need to create an environment using this repository's [environment.yml](https://github.com/ViCCo-Group/dimpred_paper/blob/main/environment.yml).
 
 3. Run `compute_dnn_results.py` to reproduce reported statistics and figures (and to reproduce all_rsm_corrs_wide.pkl which already lives in `data-processed` and is used in step 5. but will be overwritten if you execute this step).
 
