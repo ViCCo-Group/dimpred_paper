@@ -3,7 +3,7 @@
 This is the code repository of the project `A high-throughput approach for the efficient prediction of perceived similarity of natural objects`.
 
 
-It holds all analysis code needed to reproduce results presented in the [manuscript](https://www.biorxiv.org/content/10.1101/2024.06.28.601184v2). For all data needed to reproduce the manuscript's results please see the project's data repository on [OSF](https://osf.io/jtekq/).
+It holds all analysis code needed to reproduce results presented in the [paper](https://elifesciences.org/reviewed-preprints/105394v1). For all data needed to reproduce the manuscript's results please see the project's data repository on [OSF](https://osf.io/jtekq/).
 
 
 The toolbox `DimPred` itself resides in a [separate repository](https://github.com/ViCCo-Group/dimpred).
@@ -93,16 +93,16 @@ This GitHub repository is licensed under the GNU AFFERO GENERAL PUBLIC LICENSE V
 
 
 ## :page_with_curl: Citation
-If you use any of this code or the manuscript, please cite our [associated manuscript](https://www.biorxiv.org/content/10.1101/2024.06.28.601184v2) as follows:
+If you use any of this code or the manuscript, please cite our [associated paper](https://elifesciences.org/reviewed-preprints/105394v1) as follows:
 
 ```
-@preprint{Kaniuth_Dimpred,
-	author = {Kaniuth, Philipp and Mahner, Florian P. and Perkuhn, Jonas and Hebart, Martin N.},
-	title = {A high-throughput approach for the efficient prediction of perceived similarity of natural objects},
-	year = {2024},
-	doi = {10.1101/2024.06.28.601184},
-	journal = {bioRxiv},
-	url = {https://www.biorxiv.org/content/10.1101/2024.06.28.601184v2},
-	journal = {bioRxiv}
+@article{Kaniuth_2025,
+	author={Kaniuth, Philipp and Mahner, Florian P and Perkuhn, Jonas and Hebart, Martin N},
+	title={A high-throughput approach for the efficient prediction of perceived similarity of natural objects},
+	year={2025}, month=apr}
+	DOI={10.7554/elife.105394.1},
+	url={http://dx.doi.org/10.7554/eLife.105394.1},
+	publisher={eLife Sciences Publications, Ltd}
 }
+
 ```
