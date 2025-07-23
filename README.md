@@ -93,7 +93,7 @@ This GitHub repository is licensed under the GNU AFFERO GENERAL PUBLIC LICENSE V
 
 
 ## :page_with_curl: Citation
-If you use any of this code or the manuscript, please cite our [associated paper](https://elifesciences.org/reviewed-preprints/105394v1) as follows:
+If you use any of this code, please cite our [associated paper](https://elifesciences.org/reviewed-preprints/105394v1) as follows:
 
 ```
 @article{Kaniuth_2025,
